@@ -46,6 +46,11 @@ public class VpnManagerImplNew {
     public VpnProfile createVpnProfile(VpnInfoData profile) {
 
         if (vpnProfile != null) {
+            vpnProfile.setName(profile.getName());
+            vpnProfile.setGateway(profile.getGateway());
+            vpnProfile.setVpnType(VpnType.IKEV2_EAP);
+            vpnProfile.setUsername(profile.getUsername());
+            vpnProfile.setPassword(profile.getPassword());
             return vpnProfile;
         }
 
@@ -85,3 +90,4 @@ public class VpnManagerImplNew {
         return vpnProfile;
     }
 }
+
